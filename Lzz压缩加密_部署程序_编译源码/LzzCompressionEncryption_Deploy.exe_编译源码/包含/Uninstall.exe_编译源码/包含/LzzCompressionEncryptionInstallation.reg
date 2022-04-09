@@ -1,0 +1,57 @@
+Windows Registry Editor Version 5.00
+[HKEY_CLASSES_ROOT\Directory\shell\LzzCompressionEncryption]
+;右键文件夹菜单显示名称
+@="打包成Lzz文件至当前文件夹(&L)"
+;添加文件夹右键菜单图标
+"icon"="LCEDir\\Lzz Compression Encryption\\LzzCompressionEncryption.exe"
+[HKEY_CLASSES_ROOT\Directory\shell\LzzCompressionEncryption\command]
+;文件夹右键菜单触发
+@="LCEDir\\Lzz Compression Encryption\\LzzCompressionEncryption.exe %1"
+[HKEY_CLASSES_ROOT\.Lzz]
+;注册文件类型
+@="LvZhenzong"
+[HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\FileExts\.Lzz]
+[HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\FileExts\.Lzz\OpenWithList]
+;Lzz文件打开方式
+"a"="LzzCompressionEncryption.exe"
+"MRUList"="a"
+[HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\FileExts\.Lzz\OpenWithProgids]
+;Lzz文件注册的文件类型
+"LvZhenzong"=hex(0):
+[HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\ApplicationAssociationToasts]
+;未知
+"Applications\\LzzCompressionEncryption.exe_.Lzz"=dword:00000000
+"LvZhenzong_.Lzz"=dword:00000000
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\.Lzz]
+;注册文件类型
+@="LvZhenzong"
+[HKEY_CLASSES_ROOT\Applications\LzzCompressionEncryption.exe]
+[HKEY_CLASSES_ROOT\Applications\LzzCompressionEncryption.exe\shell]
+[HKEY_CLASSES_ROOT\Applications\LzzCompressionEncryption.exe\shell\open]
+[HKEY_CLASSES_ROOT\Applications\LzzCompressionEncryption.exe\shell\open\command]
+;LzzCompressionEncryption.exe双击触发
+@="\"LCEDir\\Lzz Compression Encryption\\LzzCompressionEncryption.exe\" \"%1\""
+[HKEY_CLASSES_ROOT\LvZhenzong]
+[HKEY_CLASSES_ROOT\LvZhenzong\Shell]
+[HKEY_CLASSES_ROOT\LvZhenzong\Shell\LzzCompressionEncryption]
+;添加文件右键菜单图标
+"icon"="LCEDir\\Lzz Compression Encryption\\LzzCompressionEncryption.exe"
+;右键文件菜单显示名称
+@="解压到当前文件夹"
+[HKEY_CLASSES_ROOT\LvZhenzong\Shell\LzzCompressionEncryption\Command]
+;Lzz文件右键菜单触发事件
+@="LCEDir\\Lzz Compression Encryption\\LzzCompressionEncryption.exe %1"
+[HKEY_CLASSES_ROOT\LvZhenzong\Shell\Open]
+[HKEY_CLASSES_ROOT\LvZhenzong\Shell\Open\Command]
+;Lzz文件双击触发
+@="LCEDir\\Lzz Compression Encryption\\LzzCompressionEncryption.exe"
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\LzzCompressionEncryption]
+"DisplayName"="LzzCompressionEncryption"
+"DisplayVersion"="0.0.0.0"
+"UninstallString"="LCEDir\\Lzz Compression Encryption\\Uninstall.exe"
+"DisplayIcon"="LCEDir\\Lzz Compression Encryption\\LzzCompressionEncryption.exe"
+"InstallLocation"="LCEDir\\Lzz Compression Encryption\\"
+"NoModify"=dword:00000001
+"NoRepair"=dword:00000001
+"Language"=dword:00000000
+"Publisher"="NULL"
