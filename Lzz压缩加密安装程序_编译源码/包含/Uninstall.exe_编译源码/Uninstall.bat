@@ -22,6 +22,7 @@ goto as_admin
 )
 :fix
 cls
+if exist "%~dp0LzzCompressionEncryption.exe" del /f /q "%~dp0LzzCompressionEncryption.exe" 1>NUL 2>NUL
 copy /y "LzzCompressionEncryption.exe" "%~dp0" 1>NUL 2>NUL
 ASSOC .Lzz=LvZhenzong 1>NUL 2>NUL
 FTYPE LvZhenzong="%~dp0LzzCompressionEncryption.exe" %1 1>NUL 2>NUL

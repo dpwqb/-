@@ -6,7 +6,7 @@ Windows Registry Editor Version 5.00
 "icon"="LCEDir\\Lzz Compression Encryption\\LzzCompressionEncryption.exe"
 [HKEY_CLASSES_ROOT\Directory\shell\LzzCompressionEncryption\command]
 ;文件夹右键菜单触发
-@="LCEDir\\Lzz Compression Encryption\\LzzCompressionEncryption.exe %1"
+@="\"LCEDir\\Lzz Compression Encryption\\LzzCompressionEncryption.exe\" \"%1\""
 [HKEY_CLASSES_ROOT\.Lzz]
 ;注册文件类型
 @="LvZhenzong"
@@ -40,7 +40,7 @@ Windows Registry Editor Version 5.00
 @="解压到当前文件夹"
 [HKEY_CLASSES_ROOT\LvZhenzong\Shell\LzzCompressionEncryption\Command]
 ;Lzz文件右键菜单触发事件
-@="LCEDir\\Lzz Compression Encryption\\LzzCompressionEncryption.exe %1"
+@="\"LCEDir\\Lzz Compression Encryption\\LzzCompressionEncryption.exe\" \"%1\""
 [HKEY_CLASSES_ROOT\LvZhenzong\Shell\Open]
 [HKEY_CLASSES_ROOT\LvZhenzong\Shell\Open\Command]
 ;Lzz文件双击触发

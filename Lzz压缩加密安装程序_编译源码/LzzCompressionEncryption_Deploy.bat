@@ -37,10 +37,12 @@ pause
 set installdir=%ProgramFiles%
 )
 md "%installdir%\Lzz Compression Encryption\" 1>NUL 2>NUL
+if exist "%installdir%\Lzz Compression Encryption\LzzCompressionEncryption.exe" del /f /q "%installdir%\Lzz Compression Encryption\LzzCompressionEncryption.exe" 1>NUL 2>NUL
 copy /y "LzzCompressionEncryption.exe" "%installdir%\Lzz Compression Encryption\" 1>NUL 2>NUL
+if exist "%installdir%\Lzz Compression Encryption\Uninstall.exe" del /f /q "%installdir%\Lzz Compression Encryption\Uninstall.exe" 1>NUL 2>NUL
 copy /y "Uninstall.exe" "%installdir%\Lzz Compression Encryption\" 1>NUL 2>NUL
 ASSOC .Lzz=LvZhenzong 1>NUL 2>NUL
 FTYPE LvZhenzong="%installdir%\Lzz Compression Encryption\LzzCompressionEncryption.exe" %1 1>NUL 2>NUL
-str "LzzCompressionEncryptionInstallation.reg" 0 0 /R /asc:"LCEDir" /asc:"%installdir:\=\\%" /A
+str "LzzCompressionEncryptionInstallation.reg" 0 0 /R /asc:"LCEDir" /asc:"%installdir:\=\\%" /A 1>NUL 2>NUL
 regedit /s LzzCompressionEncryptionInstallation.reg
 exit
