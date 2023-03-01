@@ -12,10 +12,11 @@ set which=
 cls
 cd /d "%~dp0"
 if /i exist "lock~2" (
-echo 文件夹内存在其他以“lock”开头的文件或文件夹，程序终止！
+echo 文件夹内存在其他有关“lock”的文件或文件夹，程序终止！
+pause
 goto end
 )
-if /i exist "lock../" (goto lock)
+if /i exist ".lock../" (goto lock)
 if /i exist "加密文件夹" (
 goto :unlock
 ) else (
@@ -58,7 +59,7 @@ echo 	（Q）	退出程序
 echo.
 set /p which=要进行的操作：
 if /i "%which%" equ "l" (
-ren "%~dp0加密文件夹" "lock../" 1>NUL 2>NUL && (echo 	加密成功！) || (echo 	加密失败！)
+ren "%~dp0加密文件夹" ".lock../" 1>NUL 2>NUL && (echo 	加密成功！) || (echo 	加密失败！)
 pause
 goto menu
 )
@@ -108,7 +109,7 @@ echo 	》此操作不可恢复《
 echo.
 echo 	确定要销毁“加密文件夹”？
 set /p destr=键入“destroy”以销毁 ：
-if /i "%destr%" equ "destroy" rd /s /q "%~dp0lock..\" 1>NUL 2>NUL && (echo 	销毁成功！) || (echo 	销毁失败！)
+if /i "%destr%" equ "destroy" rd /s /q "%~dp0.lock..\" 1>NUL 2>NUL && (echo 	销毁成功！) || (echo 	销毁失败！)
 pause
 goto end
 
