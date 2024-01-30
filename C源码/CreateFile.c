@@ -24,12 +24,12 @@ BOOL SetPrivilege(HANDLE hToken,LPCTSTR lpszPrivilege,BOOL bEnablePrivilege)
 	}
 	return TRUE;
 }
-BOOL ParameterError()//参数错误结束程序
+BOOL ParameterError()	//参数错误结束程序
 {
 	printf("参数格式错误！");
 	exit(1);
 }
-ULONGLONG FileSize(LPCSTR fsb)//将传入的/s参数转换为Byte值并返回
+ULONGLONG FileSize(LPCSTR fsb)	//将传入的/s参数转换为Byte值并返回
 {
 	char *xb;
 	double fs=strtod(fsb,&xb);
@@ -53,12 +53,12 @@ ULONGLONG FileSize(LPCSTR fsb)//将传入的/s参数转换为Byte值并返回
 }
 int main(int argc,LPCSTR argv[])
 {
-	char fileName[MAX_PATH];//文件路径（名称）
-	ULONGLONG fileSize;//文件大小
+	char fileName[MAX_PATH];	//文件路径（名称）
+	ULONGLONG fileSize;	//文件大小
 	BOOL isTUI=FALSE;
 	switch(argc)
 	{
-	case 1://无参运行，进入TUI界面
+	case 1:	//无参运行，进入TUI界面
 		printf("\n\t请确保以管理员权限运行！\n\
 用于在当前目录创建或覆盖指定名称和有效数据空间大小的文件\n\
 CLI运行请传递“/h”参数即可查看命令行使用方法\n\n\
@@ -68,7 +68,7 @@ CLI运行请传递“/h”参数即可查看命令行使用方法\n\n\
 		gets(fileName);
 		isTUI=TRUE;
 		break;
-	case 2://一个参数检测是否为/h参数
+	case 2:	//一个参数检测是否为/h参数
 	{
 		LPCSTR selfName=strrchr(argv[0],'\\')?strrchr(argv[0],'\\')+1:argv[0];
 		if(!strcmp(argv[1],"/h"))
@@ -88,7 +88,7 @@ CLI运行请传递“/h”参数即可查看命令行使用方法\n\n\
 		}
 		ParameterError();
 	}
-	case 5://四个参数
+	case 5:	//四个参数
 	{
 		char ptmp[5]={'\0'};
 		strcat(strcat(ptmp,argv[1]),argv[3]);
