@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <Windows.h>
+#pragma comment(lib,"advapi32.lib")
 BOOL SetPrivilege(HANDLE hToken,LPCTSTR lpszPrivilege,BOOL bEnablePrivilege)
 {
 	TOKEN_PRIVILEGES tp={0};
@@ -63,7 +64,7 @@ int main(int argc,LPCSTR argv[])
 用于在当前目录创建或覆盖指定名称和有效数据空间大小的文件\n\
 CLI运行请传递“/h”参数即可查看命令行使用方法\n\n\
 请输入创建的文件大小（数字+单位，如：1.44M）：");
-		fileSize=FileSize(gets(fileName));
+		fileSize=FileSize((LPCSTR)gets(fileName));
 		printf("请输入文件路径(不要添加双引号)：");
 		gets(fileName);
 		isTUI=TRUE;
