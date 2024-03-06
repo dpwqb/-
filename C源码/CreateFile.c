@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <Windows.h>
+#pragma comment(lib,"advapi32.lib")
 BOOL SetPrivilege(HANDLE hToken,LPCTSTR lpszPrivilege,BOOL bEnablePrivilege)
 {
 	TOKEN_PRIVILEGES tp={0};
